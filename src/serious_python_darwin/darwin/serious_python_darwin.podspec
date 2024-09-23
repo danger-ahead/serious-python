@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
-#   'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
     'OTHER_LDFLAGS' => '-ObjC -all_load -lc++'
   }
   s.swift_version = '5.0'
@@ -94,7 +94,7 @@ Pod::Spec.new do |s|
     rm -rf dist/root/python3/lib/python3.11
 CMD
 
-  puts `#{prepare_command}`
+  `#{prepare_command}`
 
   # Directory path
   dir_path = "dist/xcframework"
